@@ -1,3 +1,4 @@
+## Lian Valenzuela | Juan Narria
 # Importa las bibliotecas necesarias
 import requests  # Para hacer solicitudes HTTP
 import csv  # Para trabajar con archivos CSV
@@ -19,6 +20,8 @@ with open('endpoint.csv', 'w', newline='') as f:
     for item in data['quotes']:
         # Escribe una fila en el archivo CSV con el autor y la cita del elemento actual
         writer.writerow([item['author'], item['quote']])
+        
+## Lian Valenzuela | Juan Narria
 
 # Crea una lista vacía para almacenar las palabras
 words = []
@@ -32,10 +35,14 @@ for item in data['quotes']:
         if word.lower() not in excluded_words:
             words.append(word.lower())
 
+## Lian Valenzuela | Juan Narria
+
 # Crea un objeto Counter a partir de la lista de palabras
 counter = collections.Counter(words)
 # Obtiene las 10 palabras más comunes y las guarda en 'top_ten'
 top_ten = counter.most_common(10)
+
+## Lian Valenzuela | Juan Narria
 
 # Crea un nombre de archivo a partir de las 10 palabras más comunes, unidas por guiones bajos, y le agrega la extensión '.txt'
 filename = '_'.join(word for word, count in top_ten) + '.txt'
