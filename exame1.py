@@ -1,3 +1,5 @@
+## Lian Valenzuela | Juan Narria
+
 # Importa las bibliotecas necesarias
 import os  # Para trabajar con el sistema operativo
 import subprocess  # Para ejecutar comandos de shell
@@ -24,11 +26,15 @@ def check_updates():
         # Si la salida estándar del comando está vacía, significa que no hay actualizaciones disponibles
         print("No hay actualizaciones disponibles.")
 
+## Lian Valenzuela | Juan Narria
+
 # Obtiene el ID de usuario del proceso actual
 # Si el ID de usuario no es 0 (lo que significa que el proceso no se está ejecutando como root), termina el script
 if os.getuid() != 0:
     print("Este script debe ser ejecutado como root.")
     sys.exit(1)
+
+## Lian Valenzuela | Juan Narria
 
 # Llama a la función check_updates
 check_updates()
